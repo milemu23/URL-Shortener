@@ -12,9 +12,7 @@ npm install
 # Endpoints
 
 0. <strong>POST /api/v1/urls</strong><br />
-Method | Path | Result
------------- | ------------- | -------------
-POST  |  /api/v1/urls  |  Original URL & Shortened URL
+
   This will pull the url data from the json file and create a shortened url.
 
  ```
