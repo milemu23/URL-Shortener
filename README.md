@@ -22,7 +22,7 @@ npm install
 
 # Testing the API
 
-0. Using Postman is the suggested way to test
+0. Using Postman is the suggested way to test<br />
  RESULT
 
  ```
