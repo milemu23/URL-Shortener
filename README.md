@@ -12,7 +12,6 @@ npm install
 # Endpoints
 
 0. <strong>POST /api/v1/urls</strong><br />
-
   This will pull the url data from the json file and create a shortened url.
 
  ```
@@ -23,8 +22,8 @@ npm install
 
 # Testing the API
 
-Using Postman is the suggested way to test
-RESULT
+0. Using Postman is the suggested way to test
+ RESULT
 
  ```
 "Original URL: http://www.google.com\nShortened URL: localhost:3000/api/v1/url/dd_7QbeB"
