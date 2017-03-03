@@ -3,8 +3,14 @@ const bodyParser = require('body-parser');
 // new instance of express
 const app = express();
 
+app.use(bodyParser.json());
+// see data from headers
+app.use(bodyParser.urlencoded({
+  extended: true,
+}));
+
 // require routes to use
-app.use('/api', require('./routes/index'));
+app.use('/', require('./routes')(express));
 
 // configuration
 const port = process.env.PORT || 3000;
@@ -12,5 +18,3 @@ const port = process.env.PORT || 3000;
 exports.server = app.listen(port, () => {
   console.log('Server is using', port);
 });
-
-module.exports = app;
