@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 // load variables from .env file
-require('dotenv').congif();
+require('dotenv').config();
 const sequelize = new Sequelize(
   process.env.DB_NAME,
   process.env.DB_USER,
@@ -35,4 +35,4 @@ const sequelize = new Sequelize(
 
 // exports to use
 exports.sequelize = sequelize;
-exports.url = url;  
+exports.url = url;
