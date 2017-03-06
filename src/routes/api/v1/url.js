@@ -15,6 +15,14 @@ router.post('/urls', (req, res) => {
     res.status(200).json(url);
   });
 });
+// get all urls
+router.get('/urls', (req, res) => {
+  url.findAll(req.body, (err) => {
+    res.status(500).json(err);
+  }, (url) => {
+    res.status(200).json(url);
+  });
+});
 
 
 
