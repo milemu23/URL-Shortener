@@ -54,8 +54,8 @@ POST  |   /api/v1/urls/:id  |   Update URL based upon id
 DELETE  |   /api/v1/urls/:id  |   Delete url based upon id
 
 # Testing the API
-I test the API using [Postmon](https://www.getpostman.com/)
-0. TO POST:
+I test the API using [Postmon](https://www.getpostman.com/)<br />
+1. TO POST:
 Select Method POST
 ```sh
 enter localhost:3000/api/v1/urls
@@ -78,7 +78,7 @@ RESULTS:
   "createdAt": "2017-03-06T03:21:42.000Z"
 }
 ```
-1. TO GET ALL URLS:
+2. TO GET ALL URLS:
 Select Method GET
 ```sh
 enter localhost:3000/api/v1/urls
@@ -111,7 +111,7 @@ RESULTS:
   }
 ]
 ```
-2. TO GET ONE URL BY ID:
+3. TO GET ONE URL BY ID:
 Select Method GET
 ```sh
 enter localhost:3000/api/v1/urls/2
@@ -128,7 +128,7 @@ RESULTS:
   "updatedAt": "2017-03-06T02:53:38.000Z"
 }
 ```
-3. TO UPDATE ONE URL:
+4. TO UPDATE ONE URL:
 Select Method POST
 ```sh
 enter localhost:3000/api/v1/urls/2
@@ -151,7 +151,7 @@ RESULTS:
   "updatedAt": "2017-03-06T03:26:16.000Z"
 }
 ```
-4. TO DELETE ONE URL BY ID:
+5. TO DELETE ONE URL BY ID:
 Select Method DELETE
 ```sh
 enter localhost:3000/api/v1/urls/3
