@@ -57,7 +57,7 @@ DELETE  |   /api/v1/urls/:id  |   Delete url based upon id
 I test the API using [Postmon](https://www.getpostman.com/)<br />
 <br />
 
-0. TO POST:
+## TO POST:
 Select Method POST
 ```sh
 enter localhost:3000/api/v1/urls
@@ -80,7 +80,7 @@ RESULTS:
   "createdAt": "2017-03-06T03:21:42.000Z"
 }
 ```
-0. TO GET ALL URLS:
+## TO GET ALL URLS:
 Select Method GET
 ```sh
 enter localhost:3000/api/v1/urls
@@ -113,7 +113,7 @@ RESULTS:
   }
 ]
 ```
-0. TO GET ONE URL BY ID:
+##  TO GET ONE URL BY ID:
 Select Method GET
 ```sh
 enter localhost:3000/api/v1/urls/2
@@ -130,7 +130,7 @@ RESULTS:
   "updatedAt": "2017-03-06T02:53:38.000Z"
 }
 ```
-0. TO UPDATE ONE URL:
+##  TO UPDATE ONE URL:
 Select Method POST
 ```sh
 enter localhost:3000/api/v1/urls/2
@@ -153,7 +153,7 @@ RESULTS:
   "updatedAt": "2017-03-06T03:26:16.000Z"
 }
 ```
-0. TO DELETE ONE URL BY ID:
+##  TO DELETE ONE URL BY ID:
 Select Method DELETE
 ```sh
 enter localhost:3000/api/v1/urls/3
