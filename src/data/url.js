@@ -27,7 +27,7 @@ exports.find = (payload, err, success) => {
 exports.go = (payload, err, success) => {
   db.url.find({
     where: {
-      shorturl: payload.shorturl
+      shortURL: payload.shortURL
     },
   }).then(success).catch(err);
 };
