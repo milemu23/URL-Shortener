@@ -3,7 +3,7 @@ module.exports = (express) => {
 // create router
 const router = express.Router();
 
-router. get('/', (req, res) => {
+router. get('/status', (req, res) => {
   res.json( {
     healthy: true,
   })
