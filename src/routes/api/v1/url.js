@@ -37,6 +37,16 @@ router.get('/:id', (req, res) => {
   });
 });
 
+// update a url
+router.post('/:id', (req, res) => {
+  req.body.id = req.params.id;
+  url.update(req.body, (err) => {
+    res.status(500).json(err);
+  }, (url) => {
+    res.status(200).json(url);
+  });
+});
+
 
 return router;
 };
