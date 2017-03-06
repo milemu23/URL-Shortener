@@ -1,10 +1,10 @@
 // routes for url
 module.exports = (express) => {
 // import generator code
-const generator = require('../../../models/generator');
+const generator = require('../../../modules/generator');
 const router = express.Router();
 // import test data
-const url = require('../../../data/url');
+const url = require('../../../models/url');
 
 // generate short url
 router.post('/urls', (req, res) => {
