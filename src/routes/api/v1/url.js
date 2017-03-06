@@ -28,7 +28,7 @@ router.get('/urls', (req, res) => {
 });
 
 // get single url
-router.get('/:id', (req, res) => {
+router.get('/urls/:id', (req, res) => {
   req.body.id = req.params.id;
   url.find(req.body, (err) => {
     res.status(500).json(err);
@@ -38,7 +38,7 @@ router.get('/:id', (req, res) => {
 });
 
 // update a url
-router.post('/:id', (req, res) => {
+router.post('/urls/:id', (req, res) => {
   req.body.id = req.params.id;
   url.update(req.body, (err) => {
     res.status(500).json(err);
@@ -48,7 +48,7 @@ router.post('/:id', (req, res) => {
 });
 
 // delete url
-router.delete('/:id', (req, res) => {
+router.delete('/urls/:id', (req, res) => {
   req.body.id = req.params.id;
   url.delete(req.body, (err) => {
     res.status(500).json(err);
@@ -57,7 +57,16 @@ router.delete('/:id', (req, res) => {
   });
 });
 
-
+// redirect to shortened url
+router.get('/go/:shortURL', (req, res) => {
+  req.body.shortURL = req.params.shortURL;
+  url.go(req.body, (err) => {
+    res.status(500).json(err);
+  }, (url) => {
+    res.status(200);
+    res.redirect(url.original);
+  });
+});
 
 return router;
 };
