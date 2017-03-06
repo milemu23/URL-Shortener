@@ -47,6 +47,17 @@ router.post('/:id', (req, res) => {
   });
 });
 
+// delete url
+router.delete('/:id', (req, res) => {
+  req.body.id = req.params.id;
+  url.delete(req.body, (err) => {
+    res.status(500).json(err);
+  }, (url) => {
+    res.status(200).json(url);
+  });
+});
+
+
 
 return router;
 };
