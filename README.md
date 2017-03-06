@@ -42,6 +42,7 @@ To manage my database I used Sequel Pro, but any data management application wil
 Route  | Result
 ------------- | -------------
 localhost:3000/status  |   healthy: true
+localhost:3000/api/v1/go/:shortURL   |   Redirect to Original URL
 
 # Endpoints
 Method  | Route  | Result
