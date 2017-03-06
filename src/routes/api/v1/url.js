@@ -4,13 +4,19 @@ module.exports = (express) => {
 const generator = require('../../../models/generator');
 const router = express.Router();
 // import test data
-const data = require('../../../data/db');
+const url = require('../../../data/url');
 
-// url for the shortener
-router.post('/urls', (req, res) =>  {
-  const domain = 'localhost:3000/api/v1/url/';
-  res.json('Original URL: ' + data.url + '\n' + 'Shortened URL: ' + domain + generator.generate(data.url));
+// generate short url
+router.post('/urls', (req, res) => {
+  req.body.shortURL = generator.generate();
+  url.create(req.body, (err) => {
+    res.status(500).json(err);
+  }, (url) => {
+    res.status(200).json(url);
+  });
 });
+
+
 
 return router;
 };
