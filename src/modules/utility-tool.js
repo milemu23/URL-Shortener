@@ -33,19 +33,20 @@ const debug = (title, object, status) => {
   const msgFormat = `${out} Object: "${body}" \n\nTIME: ${date}`;
 
   // if the status is any of these...
-  // console log the error message
   switch(status) {
     case 'error!':
     case 'error':
     case 'err':
-
+    // status is error
     console.error(error('\n' + status + ' ' + msgFormat + '\n'));
+    fs.appendFile('./logs', ('\n' + status + ' ' + msgFormat + '\n'));
     break;
+
     case 'success!':
     case 'success':
-
-    //messageStatus = 'success';
+    // status is success
     console.log(success('\n'+ status + ' ' + msgFormat + '\n'));
+    fs.appendFile('./logs', ('\n' + status + ' ' + msgFormat + '\n'));
     break;
 
     case 'warn':
@@ -53,6 +54,7 @@ const debug = (title, object, status) => {
     case 'warning':
     //status is warning
     console.warn(warn('\n'+ status + ' ' + msgFormat + '\n'));
+    fs.appendFile('./logs', ('\n' + status + ' ' + msgFormat + '\n'));
     break;
 
     }
