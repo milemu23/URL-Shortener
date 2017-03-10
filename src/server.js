@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const util = require('./modules/utility-tool.js')
 // new instance of express
 const app = express();
 
@@ -16,5 +17,5 @@ app.use('/', require('./routes')(express));
 const port = process.env.PORT || 3000;
 // export server to use with other modules
 exports.server = app.listen(port, () => {
-  console.log('Server is using', port);
+  util.debug('Server is using', port, 'success');
 });
