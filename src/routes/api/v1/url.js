@@ -10,14 +10,14 @@ const util = require('../../../modules/utility-tool.js')
 // generate short url
 router.post('/urls', (req, res) => {
   req.body.shortURL = generator.generate();
-  util.debug('Problem is ahead more... ', req.body.shortUR, 'warn');
+  util.debug('Problem is ahead more... ', req.body.shortURL, 'warn');
   url.create(req.body, (err) => {
     // error code
     util.debug('Boo! You failed!', err, 'error');
     res.status(500).json(err);
   }, (url) => {
     // success code
-    util.debug('Hooray! Shorturl created! ', url, 'success');
+    util.debug('Hooray! Shorturl created! ', url.shortURL, 'success');
     res.status(200).json(url);
   });
 });
@@ -52,7 +52,7 @@ router.post('/urls/:id', (req, res) => {
     util.debug('Try again...', err, 'error');
     res.status(500).json(err);
   }, (url) => {
-    util.debug('You did it!', url, 'success');
+    util.debug('You did it! The new url is: ', url.original, 'success');
     res.status(200).json(url);
   });
 });
@@ -64,7 +64,7 @@ router.delete('/urls/:id', (req, res) => {
     util.debug('Only a magician can make something disappear.', err, 'error');
     res.status(500).json(err);
   }, (url) => {
-    util.debug('Gone forever.', url, 'success');
+    util.debug('Gone forever.', url, 'success', '/urls/:id');
     res.status(200).json(url);
   });
 });
@@ -77,7 +77,7 @@ router.get('/go/:shortURL', (req, res) => {
     util.debug('Something went wrong.', err, 'error');
     res.status(500).json(err);
   }, (url) => {
-    util.debug('Redirecitng to...', url, 'success');
+    util.debug('Redirecitng to...', url.original, 'success');
     res.status(200);
     res.redirect(url.original);
   });
