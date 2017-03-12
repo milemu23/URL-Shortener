@@ -189,3 +189,58 @@ Server is using
 
 TIME: 3/9/2017, 9:23:10 PM
 ```
+
+# ESLINT Installation
+[Resource - Getting Started with ESLint](http://devnull.guru/get-started-with-eslint/)
+
+### local installation
+```
+npm install eslint --save-dev  
+```
+Then cd to directory and run:
+```
+cd URL-Shortener
+```
+```
+./node_modules/.bin/eslint --init
+```
+
+### global installation (add -g flag)
+```
+npm install eslint -g
+```
+Then cd to the project directory and run:
+```
+cd URL-Shortener
+```
+```
+eslint --init
+```
+### Add to Config File
+#### config file is .eslintrc.json
+```
+{
+	"env": {
+	        "node": true
+	    },
+		"extends": "airbnb",
+    "plugins": [
+        "react",
+        "jsx-a11y",
+        "import"
+    ],
+		"rules": {
+		"new-cap": 0,
+		"prefer-template": 0,
+		"global-require": 0
+},
+"globals": {
+		"describe": true,
+		"it": true
+}
+}
+
+```
+
+# Documentation for Style Guide
+[AirBNB Javascript Style Guide](https://github.com/airbnb/javascript)
