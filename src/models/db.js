@@ -1,6 +1,7 @@
 const Sequelize = require('sequelize');
 // load variables from .env file
 require('dotenv').config();
+
 const sequelize = new Sequelize(
   process.env.DB_NAME,
   process.env.DB_USER,
@@ -17,21 +18,21 @@ const sequelize = new Sequelize(
   });
 
   // define the tables
-  const url = sequelize.define('url', {
-    original: {
-      type: Sequelize.STRING,
-      validate: {
-        isURL: true
-      }
+const url = sequelize.define('url', {
+  original: {
+    type: Sequelize.STRING,
+    validate: {
+      isURL: true,
     },
-    shortURL: {
-      type: Sequelize.STRING,
-      unique: true,
-    }
-  });
+  },
+  shortURL: {
+    type: Sequelize.STRING,
+    unique: true,
+  },
+});
 
   // sync database with setup
-  sequelize.sync();
+sequelize.sync();
 
 // exports to use
 exports.sequelize = sequelize;

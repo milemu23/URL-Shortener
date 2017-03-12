@@ -27,7 +27,7 @@ exports.find = (payload, err, success) => {
 exports.go = (payload, err, success) => {
   db.url.find({
     where: {
-      shortURL: payload.shortURL
+      shortURL: payload.shortURL,
     },
   }).then(success).catch(err);
 };
@@ -44,7 +44,7 @@ exports.update = (payload, err, success) => {
   }).catch(err);
 };
 
-//delete url by matching id
+// delete url by matching id
 exports.delete = (payload, err, success) => {
   db.url.destroy({
     where: {

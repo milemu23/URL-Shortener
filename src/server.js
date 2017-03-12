@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const util = require('./modules/utility-tool.js')
+const util = require('./modules/utility-tool.js');
 // new instance of express
 const app = express();
 
