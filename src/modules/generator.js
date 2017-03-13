@@ -4,8 +4,8 @@ const limit = 8;
 
 // create function to generate random characters
 function generateShortUrl() {
-  let shortURL = '';
-  for (let i = 0; i < limit; i++) {
+  const shortURL = '';
+  for (const i = 0; i < limit; i++) {
     shortURL += base.charAt(Math.floor(Math.random() * base.length));
   }
   return shortURL;

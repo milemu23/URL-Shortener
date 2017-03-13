@@ -20,7 +20,9 @@ const debug = (title, object, status) => {
 
     // store content
     const body = object;
-    status = status.toLowerCase();
+    // not sure why this isn't working below, commenting out for now
+    // it causes an error with my unit testing
+    // status = status.toLowerCase();
 
     // if there is no title
     if (!title) {
