@@ -21,13 +21,13 @@ const sequelize = new Sequelize(
 const url = sequelize.define('url', {
   original: {
     type: Sequelize.STRING,
-    validate: {
-      isURL: true,
-    },
+    // validate: {
+    //   isURL: true,
+    // },
   },
   shortURL: {
     type: Sequelize.STRING,
-    unique: true,
+    //unique: true,
   },
 });
 
