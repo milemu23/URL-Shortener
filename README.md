@@ -244,3 +244,23 @@ eslint --init
 
 # Documentation for Style Guide
 [AirBNB Javascript Style Guide](https://github.com/airbnb/javascript)
+
+## Unit Testing
+Packages used: chai, mocha
+
+### Install to dev-dependencies
+### Install Mocha globally
+```sh
+ sudo npm install -g mocha
+```
+```sh
+npm install chai --save-dev
+```
+## add in your package.json under scripts
+```
+"test": "mocha",
+```
+## debug mode in mocha
+```
+DEBUG=true mocha
+```
