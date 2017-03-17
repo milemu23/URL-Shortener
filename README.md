@@ -179,7 +179,7 @@ DEBUG=true nodemon src/server.js
 nodemon src/server.js
 ```
 
-## message example
+## Message Example
 ```sh
 success
 *********DEBUG*********
